@@ -1,0 +1,50 @@
+= Har generation tool  for  selenium
+
+== DESCRIPTION:
+
+This is a tool   for HAR  generation 
+
+This would   give   the ability to  run  a   selenese  TestScript or   Suite  in  a   headless  or  normal  mode 
+
+The use case is, for example to provide a tool   to  measure  performance  using HAR format .
+
+
+== INSTALLATION:
+
+You need to run this command with root privileges.
+
+Be sure you are running the latest version of  java 
+
+
+
+== CONFIGURATION:
+
+runit.sh    and  runit.bat  
+
+== SUBCOMMANDS:
+
+
+=== install 
+
+The goal  The main assumption is to bypass chef server and client install and just install a recipe.
+
+=== install
+
+=======
+
+
+When  a  user  specifies   a  selenium    script   : 
+  1.  Try    to    do  a   headeless  launch using  a  Xvfb session  .  refer  to  runit.sh  for  relevant  packages 
+
+  
+  2.     
+
+  3.      
+
+  4. Download  har    files  
+
+
+== LICENSE:
+
+Author:: Pratik  Dam
+License::  Apache License, Version 2.0
