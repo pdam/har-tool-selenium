@@ -1,19 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.blazemeter</groupId>
-    <artifactId>har-selenium</artifactId>
+    <artifactId>har-selenium-tool</artifactId>
     <version>1.0.0</version>
     <name>Selenese  Test  suite with HAR support</name>
     <description />
     <url>http://blazemeter.com</url>
     <packaging>jar</packaging>
-
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
         <version>7</version>
     </parent>
-
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -21,10 +19,9 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
     <developers>
         <developer>
-            <name>P Dam</name>
+            <name>Pratik Dam</name>
             <email>pdam.2010@gmail.com</email>
             <url>http://www.blazemeter.com</url>
             <timezone>IST</timezone>
@@ -33,13 +30,11 @@
             </roles>
         </developer>
     </developers>
-
     <scm>
         <connection>scm:git:git@github.com:pdam/har-tool-selenium.git</connection>
         <developerConnection>scm:git:git@github.com:pdam/har-tool-selenium.git</developerConnection>
         <url>git@github.com:pdam/har-tool-selenium.git</url>
     </scm>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -85,8 +80,98 @@
                     </execution>
                 </executions>
             </plugin>
-        </plugins>
-    </build>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.2.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <includeProjectDependencies>false</includeProjectDependencies>
+          <includePluginDependencies>true</includePluginDependencies>
+          <executableDependency>
+            <groupId>com.blazemeter</groupId>
+            <artifactId>har-selenium-tool</artifactId>
+          </executableDependency>
+          <mainClass>com.blazemeter.harutil.CSVParserTest</mainClass>
+          <arguments>
+            <argument>src/main/resources/runList.csv</argument>
+          </arguments>
+          <systemProperties>
+            <systemProperty>
+              <key>DISPLAY</key>
+              <value>:99</value>
+            </systemProperty>
+          </systemProperties>
+        </configuration>
+        <dependencies>
+     	 <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+        </dependency>
+       <dependency>
+        	<groupId>net.sf.opencsv</groupId>
+       		 <artifactId>opencsv</artifactId>
+       		 <version>2.0</version>
+       	</dependency>
+        <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-mapper-lgpl</artifactId>
+                <version>1.9.9</version>
+        </dependency>
+        <dependency>
+                <groupId>com.blazemeter</groupId>
+                <artifactId>selenium-server-standalone</artifactId>
+                <scope>system</scope>
+                <systemPath>${project..basedir}/lib/selenium-server-standalone-2.25.0.jar</systemPath>
+                <version>1.0.0</version>
+        </dependency>
+        <dependency>
+                <groupId>com.blazemeter</groupId>
+                <artifactId>browsermob</artifactId>
+                <version>1.0.0</version>
+                <scope>system</scope>
+                <systemPath>${project.basedir}/lib/browsermob-proxy-2.0-beta-6.jar</systemPath>
+        </dependency>
+         <dependency>
+            <groupId>com.blazemeter</groupId>
+            <artifactId>har-selenium-tool</artifactId>
+            <version>1.0.0</version>
+            <type>jar</type>
+          </dependency>
+        </dependencies>
+      </plugin>
+
+	<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+	    <version>2.7.2</version>
+            <configuration>
+                <systemPropertyVariables>
+                    <DISPLAY>:99</DISPLAY>
+                </systemPropertyVariables>
+            </configuration>
+        </plugin>
+
+
+
+
+
+
+
+
+
+
+
+
+    </plugins>
+  </build>
 
     <dependencies>
         <dependency>
@@ -94,6 +179,11 @@
             <artifactId>junit</artifactId>
             <version>4.10</version>
         </dependency>
+       <dependency>
+	<groupId>net.sf.opencsv</groupId>
+	<artifactId>opencsv</artifactId>
+	<version>2.0</version>
+       </dependency>
 	<dependency>
 		<groupId>org.codehaus.jackson</groupId>
 		<artifactId>jackson-mapper-lgpl</artifactId>
@@ -103,7 +193,7 @@
         	<groupId>com.blazemeter</groupId>
         	<artifactId>selenium-server-standalone</artifactId>
         	<scope>system</scope>
-        	<systemPath>${project.basedir}/lib/selenium-server-standalone-2.25.0.jar</systemPath>
+        	<systemPath>${project..basedir}/lib/selenium-server-standalone-2.25.0.jar</systemPath>
         	<version>1.0.0</version>
         </dependency>
         <dependency>
@@ -114,7 +204,6 @@
         	<systemPath>${project.basedir}/lib/browsermob-proxy-2.0-beta-6.jar</systemPath>
         </dependency>
     </dependencies>
-
     <reporting>
         <plugins>
             <plugin>
@@ -132,5 +221,5 @@
             </plugin>
         </plugins>
     </reporting>
-
 </project>
+
