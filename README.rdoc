@@ -4,7 +4,16 @@
 
 This is a tool   for HAR  generation 
 
-This would   give   the ability to  run  a   selenese  TestScript or   Suite  in  a   headless  or  normal  mode 
+This would   give   the ability to  run  a  
+    selenese  TestScript orSuite  in  a   headless  or  normal  mode 
+It can also  parse a  textFile  having a  list  of   URLs and  generate one  HAR  per  domain  listed  
+
+To  do  one     go  run  .  
+  1. Unzip  the  files  or  copy  to a  local  directory 
+  2. Change     directory  and run  the   command   " mvn   clean  install test  exec:java  " . It would build  the  project  
+and  then    run  a   script  taking  a text File  called  runList.csv  as  input    and  create  har    files  for  all  domains 
+listed  in the  CSV  File
+
 
 The use case is, for example to provide a tool   to  measure  performance  using HAR format .
 
@@ -19,29 +28,35 @@ Be sure you are running the latest version of  java
 
 == CONFIGURATION:
 
-runit.sh    and  runit.bat  
+runList.csv  has  a  list  of  URLs  for   which  har  files  need  to be   generated  
+    Sample  is   attached  and  it  could be  URLs  from   different  domains    
+            http://www.python.org/about
+            http://www.python.org/jobs
+            http://www.python.org/community/sigs/
+            http://www.python.org/community
+            http://www.perl.org/get.html
+            http://www.perl.org/about
+            http://www.perl.org/latest
+            http://www.rubygems.org/get.html
+            http://en.wikipedia.org/wiki/Main_Page
+            http://en.wikipedia.org/wiki/Portal:Featured_content
+            http://en.wikipedia.org/wiki/Portal:Featured_content 
+            http://en.wikipedia.org/wiki/Wikipedia:Featured_article_candidates
+            http://en.wikipedia.org/wiki/Wikipedia:FAC
+            http://twitter.com/
+            http://www.pushtotest.com/testmaker-open-source-testing
+            http://www.makemytrip.com/
+            http://www.makemytrip.com/bus-tickets/
+            http://www.makemytrip.com/international-flights/
+
 
 == SUBCOMMANDS:
-
-
-=== install 
-
-The goal  The main assumption is to bypass chef server and client install and just install a recipe.
+  None  
 
 === install
+Use   the   command  " mvn   clean  install test   exec:run "  for  a   sample  run  .(  Prefered    clean   way )
+If   you  want  to  use  a    command line  approach  using java  use    runit.sh ( Headeless  Linux )or  runit_mac.sh(  Mac ) or  runit.bat ( Windows
 
-=======
-
-
-When  a  user  specifies   a  selenium    script   : 
-  1.  Try    to    do  a   headeless  launch using  a  Xvfb session  .  refer  to  runit.sh  for  relevant  packages 
-
-  
-  2.     
-
-  3.      
-
-  4. Download  har    files  
 
 
 == LICENSE:
