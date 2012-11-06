@@ -258,7 +258,7 @@ public class SuiteRunner implements Callable<SuiteResult> {
         String time = String.format("%.2f sec", duration / 1000.0d);
 
         HTMLTestResults htmlResult = new HTMLTestResults(VERSION, REVISION, suiteResult.substring(7), time, String.valueOf(totalTests), String.valueOf(testsPassed), String.valueOf(testsFailed), String.valueOf(commandsPassed), String.valueOf(commandsFailed), String.valueOf(commandsError), suiteHtml, testTables, log);
-        reportFile.getParentFile().mkdirs();
+        //reportFile.getParentFile().mkdirs();
         PrintWriter writer = new PrintWriter(reportFile);
         htmlResult.write(writer);
         writer.close();
