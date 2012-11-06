@@ -1,17 +1,12 @@
 package com.blazemeter.harutil;
 
 import   com.blazemeter.mvnsese.exec.ExecContext;
-import com.blazemeter.mvnsese.exec.ExecContext.TraceLevel;
 import com.blazemeter.mvnsese.exec.SuiteResult;
 import com.blazemeter.mvnsese.exec.SuiteRunner;
-import com.blazemeter.mvnsese.model.SeleneseSuite;
 import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor;
 import org.browsermob.proxy.ProxyServer;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 

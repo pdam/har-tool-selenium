@@ -1,5 +1,7 @@
 package com.blazemeter.mvnsese.exec;
 
+import java.net.URL;
+
 import com.blazemeter.mvnsese.model.Command;
 
 public class CommandResult {
@@ -12,7 +14,15 @@ public class CommandResult {
         this.command = command;
     }
 
-    public CommandResult fail(String msg) {
+    public CommandResult(URL url) {
+		
+	}
+
+	public CommandResult(String captureNetworkTraffic) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public CommandResult fail(String msg) {
         this.result = Result.FAILED;
         this.msg = msg;
         return this;

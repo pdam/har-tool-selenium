@@ -100,7 +100,7 @@ public class SeleneseParser {
             for (int i = 0; i < commandList.getLength(); i++) {
                 Element commandNode = (Element) commandList.item(i);
                 NodeList children = (NodeList) child.evaluate(commandNode, XPathConstants.NODESET);
-                Command command = new Command();
+                Command command = new Command(null);
                 command.setName(((Element) children.item(0)).getTextContent());
                 command.setTarget(((Element) children.item(1)).getTextContent());
                 command.setValue(((Element) children.item(2)).getTextContent());

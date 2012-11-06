@@ -1,14 +1,12 @@
 package com.blazemeter.harutil;
 
-import com.blazemeter.harutil.PerformanceTiming;
+import java.io.File;
+import java.util.concurrent.TimeUnit;
+
 import org.browsermob.proxy.ProxyServer;
-import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
-import java.io.File;
-import java.util.concurrent.TimeUnit;
 
 public class NavTimingTest {
     public static void main(String[] args) throws Exception {
@@ -22,9 +20,9 @@ public class NavTimingTest {
 
         FirefoxDriver driver = new FirefoxDriver(capabilities);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
+         
         // start capture
-        proxy.newHar("twitter.com");
+        proxy.newHar("localhost");
         
         
         // write the har file out

@@ -262,7 +262,6 @@ public class SuiteRunner implements Callable<SuiteResult> {
         PrintWriter writer = new PrintWriter(reportFile);
         htmlResult.write(writer);
         writer.close();
-
         return new SuiteResult(suite, totalTests, testsFailed, time);
 
 

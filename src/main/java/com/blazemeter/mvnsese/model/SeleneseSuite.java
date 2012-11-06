@@ -1,7 +1,5 @@
 package com.blazemeter.mvnsese.model;
-
 import com.blazemeter.mvnsese.model.SeleneseTest;
-
 import java.util.List;
 
 public class SeleneseSuite extends Selenese{

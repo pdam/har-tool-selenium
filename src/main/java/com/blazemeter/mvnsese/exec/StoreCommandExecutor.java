@@ -4,6 +4,7 @@ import com.blazemeter.mvnsese.model.Command;
 import com.thoughtworks.selenium.Selenium;
 import com.thoughtworks.selenium.SeleniumException;
 import java.lang.reflect.Method;
+import java.net.URL;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -47,4 +48,11 @@ public class StoreCommandExecutor extends ReflectiveCommandExecutor {
         return sb.toString();
 
     }
+
+	@Override
+	public CommandResult execute(Selenium selenium,
+			Map<String, Object> testCtx, URL url) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
